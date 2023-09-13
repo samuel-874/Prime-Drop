@@ -1,0 +1,71 @@
+.btn-div{
+    display: flex;
+    flex-direction: row;
+    border-style: none;
+    justify-content: space-around;
+    border-radius: 25px;
+    width:180px;
+    height: 55px;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+.btn-div :hover{
+    cursor: pointer;
+}
+
+.tiny-icon-container{
+    flex:1;
+    /* margin-left:16px;
+    margin-top:4px; */
+    margin:auto;
+    padding-left: 16px;
+
+    /* align-items: center;
+    justify-content: center; */
+
+    
+
+}
+
+.tiny-icon{
+    width: 40px;
+}
+
+
+.div-btn-text-container{
+    flex:2;
+    display: flex;
+    font-family: 'TT Commons';
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.tiny-text{
+    font-weight: 600;
+    color:#c7c0cf;
+    font-size: 10px;
+}
+
+    @media(max-width:600px){
+        .btn-div{
+            width:260px;
+            height: 85px;
+            margin: auto;
+            margin-right: 0;
+            margin-left: 20%;
+            margin-bottom: 20px;
+            border-radius: 40px;
+        }
+        .tiny-text{
+            font-size: 15px;
+        }
+        #large-text{
+            font-size:25px;
+        }
+        
+        .tiny-icon{
+            width:60px;
+        }
+
+    }

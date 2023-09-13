@@ -1,0 +1,547 @@
+.home-banner{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    color:#FFF;
+    font-family: 'TT Commons', sans-serif;
+    background-color:#5A00B4;
+}
+
+.home-banner-middle-section{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.home-banner-btn{
+    color:var(--colours-spatch-100, #5A00B4); ;
+    width: 170px;
+    height: 46px;
+    font-weight: 600;
+
+    background-color: #FFFF;
+    border-radius: 100px;
+    border-style: none;
+}
+
+.home-banner-heading{ 
+    margin-top: 0;
+    margin-bottom: 0.7;
+    padding: 0;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+    width: 450px;
+    flex:0.8;
+}
+.home-banner-subheading{
+    margin-top: 0;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2px;
+    padding-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    width:350px;
+    font-weight: 300;
+    font-size: 15px;
+    flex:0.5
+}
+.home-banner-minitxt{
+    flex:0.5;
+    text-align: center;
+    width:410px;
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+
+.screenshot{
+    flex:1;
+    width:164px;
+    margin-bottom: 0;
+}
+.first-section-text{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    padding-bottom: 55px;
+}
+
+.first-section-text h1{
+    margin-bottom: 2px;
+    color: #1D293F;
+    font-family: 'TT Commons';
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: -0.828px;   
+}
+
+.first-section-text h3{
+    margin-top: 2px;
+    color: #7C8087;
+    width:340px;
+    text-align: center;
+    font-family: 'TT Commons';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+}
+
+
+.first-section-adscontainer{
+    margin: 0;
+    display: flex;
+    justify-content:space-around;
+}
+.ads-1, .ads-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:#F7F8FA;
+    border-radius: 10px;
+}
+
+
+
+
+
+#ads-2{
+    flex:1.2;
+    width: 100px;
+    height: 220px;
+    border-color: rgb(109, 29, 231); ;
+    border-style: solid;
+    border-width: 2px;
+    flex-shrink: 0;
+}
+
+
+/* change to make to card css */
+/* .ads-1 .ads-icon{
+    margin-top: 18px;
+    margin-left: 30px;
+} */
+
+.ads-2 .ads-icon{
+    margin-left: 12px ;
+}
+/* .ads-3 .ads-icon{
+    margin-left: 12px ;
+}
+.ads-4 .ads-icon{
+    margin-left: 12px ;
+}
+ */
+
+
+
+.ads-icon{
+    flex: 1;
+    width: 40px;
+    height: 40px;
+}
+
+
+.home-body-first-section{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 90px;
+}
+
+
+
+.ads-heading{
+    margin-top: 0;
+    font-weight: 500;
+    font-family: 'Rubik';
+    font-size: 17px;
+}
+.ads-2 .ads-heading{
+    font-weight: 650;
+    font-size: 20px; 
+}
+.ads-subheading{
+    margin-top: 0;
+    margin-left: 0;
+    font-weight: 400;
+    color: gray;
+    font-size: 12px;
+    font-family: 'Rubik';
+    width:200px;
+    text-align: left;
+}
+.ads-text{
+    flex: 2;
+    display: flex;
+    padding-top: 0;
+    text-align: center;
+    padding-left: 10px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+.home-body-second-section{
+    width: 100%;
+    height: 540px;
+    background-color:  #F3F6F8;
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: row;
+}
+
+.second-section-left{
+    margin-top: 80px;
+    display: flex;
+    flex:1;
+}
+
+.second-section-right{
+    display: flex;
+    justify-content:baseline;
+    align-items:end;
+    flex:1;
+}
+
+
+.btn{
+    align-self:first baseline;
+    height: 45px;
+    width: 150px;
+    margin:auto;
+    border-style: none;
+    border-radius: 25px;
+    background-color: #FFF;
+    color:  rgb(109, 29, 231);
+}
+
+
+
+/* ====== ################ ======== */
+
+.section-left-container{
+    width: 400px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 80px;
+    margin-bottom: auto;
+    justify-content: left;
+    /* display: flex; */
+    flex-direction: column;
+}
+
+
+.bold-heading{
+    text-align: left;
+    margin: auto;
+    margin-left:0;
+    margin-right:0;
+    padding-bottom: 10px;
+    width: 300px;
+    font-size:35px;
+    font-weight: 700;
+}
+
+
+.light-subheading{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    text-align: left;
+    color: var(--colours-black-text-60, #777F8C);
+    margin: auto;
+    margin-left:0;
+    margin-right:0;
+    font-size: 16px;
+    width: 290px;
+    font-weight: 480;
+}
+
+
+
+
+
+
+
+
+
+.screenshot-2{
+    /* width:00px; */
+    width:70%;
+    min-width: 300px;
+    height: auto;
+    padding-bottom: 0;
+}
+
+
+
+
+.screenshot-3{
+    width:300px;
+    margin-left: 80px;
+    position: relative;
+    margin-top: 0;
+    box-shadow: 0px 82.07289123535156px 164.14578247070312px 0px rgba(30, 52, 92, 0.16);
+}
+
+.home-body-third-section{
+    margin-top:200px;
+    display: flex;
+    margin-bottom: 200px;
+}
+.body-thrid-section-left{
+    flex:1;
+    overflow: hidden;
+}
+
+.oval{
+    background-color: orange;
+    height:400px;
+    width: 400px;
+    margin-left: 9px;
+    margin-top: 9px;
+    border-style: none;
+    border-radius: 100%;
+    position: absolute;
+}
+
+
+.body-thrid-section-right{
+    flex:1;
+    justify-content: space-between;
+}
+
+
+/* ====== ################ ======== */
+
+.fourth-section-reviews{
+    margin: auto;
+    justify-content: left;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+
+
+.review-1 ,.review-2,.review-3, .review-4 {
+    border:1px solid black;
+}
+
+.heart{
+    width:60px;
+}
+
+.fourth-section-reviews{
+    display: flex;
+
+
+    /* ####################################################### */
+}
+
+.fourth-section-reviews #card-heading{
+    margin-top: 0;
+    font-weight: 400;
+    color: rgb(66, 63, 63);
+    font-size: 12px;
+    font-family: 'Rubik';
+    width:200px;
+    text-align: left;
+}
+.fourth-section-reviews #card-subheading{
+    color: rgb(0, 0, 0);
+    font-weight: 509;
+    font-size:12px;
+}
+.fourth-section-reviews #card-icon{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.fourth-section-reviews .card-text-container{
+    padding-left: 0px;
+}
+.fourth-section-reviews .card{
+    /* width: 100px; */
+    margin-left: 0px;
+    background-color: #FFF;
+    border: 0.5px solid rgb(209, 206, 206);
+}
+
+.review-container{
+    display: flex;
+    flex-direction: column;
+    margin-left:90px;
+
+}
+.fourth-section-header{
+    margin-bottom: 40px;
+    color: #1D293F;
+    width:350px;
+}
+
+.review-1 .profile-pic{
+    width:50px;
+}
+
+.home-body-forth-section{
+    height: 378.242px;
+    margin-bottom: 80px;
+}
+
+
+
+    @media (max-width:600px){
+        .first-section-text h1{
+            font-size: 28px;
+        }
+        .first-section-text h3{
+            text-align: center;
+            width:300px;
+            font-size: 18px;
+        }
+        .first-section-adscontainer{
+            flex-direction: column;
+            height: 900px;
+        }
+        .home-banner-middle-section{}
+
+        .home-banner{
+            height: 750px;
+        }
+        #screenshot{
+            width: 180px;
+            align-self:center;
+            /* position: absolute; */
+        }
+        .home-banner-heading{
+            width:350px;
+            margin-top: 0px;
+            font-size: 38px;
+        }
+        .home-banner-subheading{
+            font-size: 15px;
+            text-align: center;
+            margin-top: 20px;
+            width:300px;   
+        }
+     
+        .home-body-second-section{
+            height:900px;
+            flex-direction: column;
+        }
+        .section-left-container{
+            justify-content: center;
+            margin:0;
+            width:100%;
+
+        }
+        .home-banner-middle-section{
+            margin-top: 0;
+        }
+        .bold-heading{
+            margin:auto;
+            text-align: center;
+        }
+        .light-subheading{
+            margin: auto;
+            text-align: left;
+        }
+
+        .btn{
+            /* margin-left: 76px; */
+            background-color: #FFF;
+            color:  rgb(109, 29, 231); 
+        }
+        .screenshot-2{
+            width:100%;
+            min-width: 300px;
+            margin-left:50px;
+            margin-bottom: 0;
+            height: auto;
+            padding-bottom: 0;
+        }
+
+        .home-body-third-section{
+            margin-bottom: 140px;
+            margin-top: 100px;
+            overflow: hidden;
+            flex-direction: column-reverse;
+        }
+        .second-section-left{
+            text-align: center;
+            margin-top: 60px;
+
+        }
+        #bold-heading-2{
+            text-align: left;
+        }
+        .body-thrid-section-left{
+            width:100%;
+            margin: auto;
+            margin-top: 40px;
+        }
+        .oval{
+            margin-left: 20%;
+            height: 300px;
+            width: 300px;
+        }
+        .screenshot-3{
+            margin-left: 30%;;
+            margin-right: auto;
+            width:200px;
+        }
+        .heart{
+            width:40px;
+        }
+        .fourth-section-header{
+            margin-left: 0;
+            font-size: 29px;
+            width:300px;
+        }
+        .home-body-first-section{
+            height: 1250px;
+            margin-bottom: 100px;
+        }
+        .fourth-section-reviews{
+            display: grid;
+            gap:15rem;
+            grid-auto-flow: column;
+            grid-auto-columns: 10%;
+            overflow-x: auto;
+            overscroll-behavior-inline: contain;
+            grid-template-rows: min-content;
+            padding: 6px;
+        }
+        
+        .fourth-section-reviews #body-card{
+            height: 210px;;
+            width:250px;
+        }
+        .snap-inline{
+            scroll-snap-type: inline mandatory;
+        }
+
+        .snap-inline > * {
+            scroll-snap-align: start;
+            scroll-padding: 3px;
+        }
+
+        #body-card{
+            height: 240px;;
+        }
+    
+
+    }

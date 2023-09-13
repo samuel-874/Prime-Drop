@@ -1,0 +1,9 @@
+<svg width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Icon">
+<path id="Oval" fill-rule="evenodd" clip-rule="evenodd" d="M28 55C43.1878 55 55.5 42.6878 55.5 27.5C55.5 12.3122 43.1878 0 28 0C12.8122 0 0.5 12.3122 0.5 27.5C0.5 42.6878 12.8122 55 28 55Z" fill="white"/>
+<g id="business-agent">
+<path id="Path" fill-rule="evenodd" clip-rule="evenodd" d="M25.627 28.9355L18.5195 33.516C17.8869 33.9237 17.5 34.6579 17.5 35.4502V39.8119H38.5V35.4502C38.5 34.6579 38.1131 33.9237 37.4804 33.516L30.373 28.9355" fill="#7000F6"/>
+<path id="Path_2" fill-rule="evenodd" clip-rule="evenodd" d="M22.2246 21.7667C22.2246 18.3834 24.5204 15 27.9996 15C31.4788 15 33.7747 18.3834 33.7747 21.7667C33.7747 26.8418 30.6246 29.6613 27.9996 29.6613C25.3746 29.6613 22.2246 26.8418 22.2246 21.7667Z" fill="#7000F6"/>
+</g>
+</g>
+</svg>

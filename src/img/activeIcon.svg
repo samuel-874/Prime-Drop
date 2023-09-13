@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65" fill="none">
+  <defs>
+    <filter id="filter0_d_23_11658" x="0.698079" y="0.909016" width="63.387" height="63.387" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feMorphology radius="2.33577" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_23_11658"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="11.6789"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.152941 0 0 0 0 0.67451 0 0 0 0 0.152941 0 0 0 1 0"/>
+      <!-- The above line has been modified to change the shadow color -->
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_23_11658"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_23_11658" result="shape"/>
+    </filter>
+  </defs>
+  <g filter="url(#filter0_d_23_11658)">
+    <circle cx="32.3916" cy="32.6025" r="6" fill="#27ac27"/>
+  </g>
+</svg>

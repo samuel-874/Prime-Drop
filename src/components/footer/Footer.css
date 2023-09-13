@@ -1,0 +1,262 @@
+.footer{
+    width:100%;
+}
+.footer-first-section{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.969264268207283) 17%, rgba(164,164,169,1) 33%, rgba(0,0,0,1) 59%);
+    height: 450px;
+}
+
+img{
+    display: inline-block;
+}
+#img{
+    width: 50%;
+    height: 100%;
+}
+#img1{
+    height: 100%;
+    width:50%;
+}
+
+
+.text-area{
+    color: #FFF;
+    margin-left: 400px;
+    margin-right: 400px;
+    font-family: 'TT Commons';
+    position: absolute;
+    width:400px;
+    transform: translate(-0.05%, -140%);
+}
+.text-area h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.text-area h4{
+    font-size: 17px;
+    font-weight: 450;
+    text-align: center;
+}
+
+.text-area-btn{
+    font-weight: 550;
+    color:white;
+    border: none;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--colours-spatch-100, #7300ff);
+}
+
+.btn-container{
+    text-align: center;
+}
+
+.img-area{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100%;
+}
+.footer-second-section{
+    background: #E7ECF0; 
+    height: 400px;    
+    display: flex;
+    flex-direction: column;
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 120px;
+    padding-bottom:0;
+}
+
+.col-container{
+    font-family: 'TT Commons';
+    flex:2;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.col-1{
+    flex:1;
+}
+.col-1 h1{
+    margin-left: 0;
+}
+
+.col-1 .Logo{
+    margin: 0;
+}
+.footer-heading{
+    font-size: 16px;
+}
+li{
+    list-style: none;
+}
+
+.col-2{
+    flex:1;
+}
+.col-3{
+    flex:1;
+
+}
+.col-4{
+    flex:1;
+
+}
+.col-1-text-container{
+    width:100%;
+    font-size: 20px;
+    color: var(--colours-black-text-80, #4A5466);
+}
+#col-1-text{
+    width:230px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.col-list{
+    margin-top: 39px;
+    color: var(--colours-black-text-80, #4A5466);
+    font-weight: 400;
+    font-size: 12px;
+}
+.col-list li,h1{
+    margin: 12px;
+}
+
+.footer-bottom{
+    flex:2;
+    display: inline-block;
+}
+.footer-bottom-text{
+    color: var(--colours-black-text-80, #4A5466);
+    font-size: 13px;
+    margin-left:465px;
+    font-weight: 400;
+    font-family: 'Rubik';
+    display: inline-block;
+}
+
+.footer-bottom-icons{
+    margin-top: 10px;;
+    display: inline-block;
+}
+#bottom-text-1{
+    margin-right: 0;
+    margin-left: 0;
+}
+#bottom-text-2{
+    margin-right: 40px;
+}
+
+.footer-bottom-icons img{
+    width: 30px;
+    margin-left:10px;
+}
+
+    @media(max-width:600px){
+    
+        .text-area{
+            color: #FFF;
+            margin: auto;
+            margin-left: 19%;
+            margin-right: auto;
+            font-family: 'TT Commons';
+            position: absolute;
+            width:300px;
+            /* transform: translate(0.005%, -120%); */
+        }
+        .text-area h1{
+            font-size: 26px; 
+        }
+        .text-area h4{
+            width: 270px;
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        #img ,#img1{
+            object-fit:cover;
+        }
+        .footer-first-section{
+            height: 300px;
+        }
+        .text-area-btn{
+            height: 60px;
+        }
+        .footer-second-section{
+            padding-left: 90px;
+            padding-right: 0;
+
+            /* padding: 0; */
+            height: 1200px;
+            box-sizing: border-box;
+            width:100%;    
+        }
+         .col-4 .btn-div{
+            margin-left: 0;
+            width:190px;
+            height: 60px;
+        }
+
+        .col-4 .tiny-icon{
+            width: 40px;
+        }
+        .col-4 .tiny-text{
+            font-size: 10px;
+        }
+        .col-4 #large-text{
+            font-size:18px;
+        }
+        
+        .footer-bottom{
+            display: flex;
+            flex-direction: column;
+        }
+        #bottom-text{
+            margin-right: 0;
+        }
+        #bottom-text-2{
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 0;
+            margin-left: 0;
+
+        }
+        
+        .col-container{
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .Logo{
+            width:600px;
+        }
+        #bottom-text-1{
+            font-weight: 500;
+            font-size: 13px;
+            width:300px;
+            margin-top: 100px;
+        }
+        .footer-bottom-icons img{
+            margin: 10px;
+            margin-top:0;
+            width:39px;
+        }
+        .footer-heading{
+            /* font-size: 9px; */
+            font-size: 28px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        .col-list li{
+            font-size:15px;
+        }
+
+        
+    }
+

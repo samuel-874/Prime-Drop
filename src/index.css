@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+#bg-img {
+  position: relative;
+  background-image: url(/src/img/googlemap.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#bg-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F7F8FA;
+  opacity: 0.7;
+  /* Replace 0.5 with the desired opacity value (0 to 1) */
+
+}
+#header-img{
+  background-image: url(/src/img/dropdowarrow.svg);
+  background-repeat: no-repeat;
+}
+
+#footer-img{
+  background-image: url(/src/img/footerarrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  
+}
+
+#body{
+  opacity: 1;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* width */
+div ::-webkit-scrollbar {
+  display: none;
+  
+}
+
+*:focus{
+  outline: none;
+}
+
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7000F6;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.dashboard-home input:focus{
+  outline: none;
+}
+
+textarea{
+  resize: none;
+}
+
+  @media ( max-width:600px){
+
+  }
