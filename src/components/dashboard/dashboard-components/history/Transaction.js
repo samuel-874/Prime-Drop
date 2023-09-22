@@ -14,6 +14,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Authenticated, UserContext } from "../../DashBoard";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import moment from "moment";
 
 
  function Transaction(){
@@ -100,7 +101,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
                         </div>
                         <div className=" flex justify-between px-3 text-[15px] font-bold">
                             <p>{`${distance}km`}</p>
-                            <p>{dropOffTime || '-'}</p>
+                            <p>{ dropOffTime || '-'}</p>
                             <p>{pickUpTime || '-'}</p>
                         </div>
                         <div className="bg-[#777F8C] h-[1px] w-[100%] rounded-2xl mx-auto " ></div>

@@ -144,6 +144,19 @@ import { NotificationContext } from "../../App";
    
       },[])
 
+
+      useEffect(()=>{
+         axios({
+            url:`${REACT_APP_AUTH_BASE_URL}/user/get-app-settings`,
+            headers:{Authorization: `Bearer ${token}`}
+         }).then((response)=>{
+            localStorage.setItem('App data',JSON.stringify(response.data.data[0] || []))
+            localStorage.setItem('Route Cost',JSON.stringify(response.data.data[1] || []))
+         }).catch((error)=>{
+
+         })
+      },[])
+
       useEffect(()=>{
          toggleVisibility((oldState)=>
          {return{...oldState,addIconVisibility:true,infoIconVisibility:true}})

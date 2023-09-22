@@ -48,7 +48,8 @@ export default  function PaymentForm()  {
         setFormError(false)
 
         const payload={
-          "source":'Fluter wave'
+          "source":'Fluter wave',
+          "description":"Wallet topup with gateway"
           ,"amount":amount
           ,"type":'FUNDING'}
 

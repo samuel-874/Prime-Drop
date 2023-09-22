@@ -219,12 +219,12 @@ import axios from "axios";
                 {errors.cvv && <p className="text-red-500 mt-1">{errors.cvv}</p>}
             </div>
             </div>
-            <button
+           <button
             type="submit"
             className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
             >
             Submit
-            </button>
+           </button>
         </form>
         </div>
     );

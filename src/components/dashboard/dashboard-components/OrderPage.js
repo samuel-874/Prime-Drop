@@ -44,6 +44,12 @@ import { startLoading } from "../../../app/loadingSplice";
       
       const { REACT_APP_AUTH_BASE_URL } = process.env
       const {     balance, email, fullName, imagePath,phoneNo,token } = useContext(UserContext);
+      const appSettings = JSON.parse(localStorage.getItem('App data')) || [] ;
+
+      const [ error,showError ] = useState({
+        bikeError:false,
+        vanError:false
+      })
 
     const location = window.location;
     const [userRole, updateUserRole] = useState('SENDER');
@@ -68,7 +74,7 @@ import { startLoading } from "../../../app/loadingSplice";
     const [sn, updateSn] = useState('');
     const [sm, updateSm] = useState('');
     const [note ,updateNote ] = useState('');
-    const [charge, updateCharge ] = useState('');
+    const [charge, updateCharge ] = useState(2300);
     const [vehicle, updateVehicle] = useState('');
     const [itemField, updateItemField] = useState('');
     const [cashToReceive, updateCashToReceive ] = useState('0.00');
@@ -80,7 +86,36 @@ import { startLoading } from "../../../app/loadingSplice";
     const vehicleActiveClass = { color: '#27ac27', border: 'solid #27ac27', width: '300px' };
     const vehicleUnActiveClass = { color: '#1D293F', opacity: '0.6', width: '290px' };
 
-    const isValid = cashToReceive === '0.00' || cashToReceive === '0.0' || cashToReceive.length < 3 
+    const isValid = cashToReceive === '0.00' || cashToReceive === '0.0' || cashToReceive.length < 3 ;
+
+
+    
+
+    useEffect(()=>{
+        
+      const averageDistance = Math.floor(Math.random() * 26);
+
+      const routeCost = JSON.parse(localStorage.getItem('Route Cost'))
+      let mainCost;
+            if(Array.isArray(routeCost)){
+                for(let i = 0 ; i < routeCost.length ; i++){
+                    if(averageDistance <= routeCost[i].distanceTo && averageDistance >= routeCost[i].distanceFrom){
+                        mainCost =  routeCost[i].amount;
+                    }
+                }
+        console.log(mainCost);
+
+
+      if(mainCost != undefined && mainCost > 1){
+          updateCharge(mainCost);
+      }
+
+    }
+    },[])
+
+
+
+
 
     function format(inputString) {
         if (inputString.length === 0) {
@@ -118,23 +153,51 @@ import { startLoading } from "../../../app/loadingSplice";
         }
       }
 
-      useEffect(()=>{
-            toggleVisibility((oldState)=>{return{...oldState,addIconVisibility:false}})
-      },[])
+            
+      const bikeSettings = appSettings.find((appSet)=>{
+        if(orderPackage === 'EXPRESS'){
+            return appSet.service === 'Express Bike Delivery'
+        }else {
+            return appSet.service === 'Same Day Bike Delivery'
+        }
+        })
+
+        const vanSettings = appSettings.find((appSet)=>{
+                if(orderPackage === 'EXPRESS'){
+                    return appSet.service === 'Express Van Delivery'
+                }else {
+                    return appSet.service === 'Same Day Van Delivery'
+                }
+        })
+
+
+        useEffect(()=>{
+            updateVehicle('')
+        },[orderPackage])
+
+
       
 
-      useEffect(()=>{
+   useEffect(()=>{
+
+    toggleVisibility((oldState)=>{return{...oldState,addIconVisibility:false}})
+
         setTimeout(()=>{
             toggleVisibility((oldState)=>{return{...oldState,infoIconVisibility:false}})
         },4000)
 
 
-        
         setTimeout(()=>{
                 toggleVisibility((oldState)=>{return{...oldState,infoIconVisibility:true}})
         },8000)
-      },[])
+    },[])
 
+      useEffect(()=>{
+
+            setTimeout(() => {
+                showError({bikeError:false,vanError:false})
+            }, 8000);
+      },[error])
 
     
 
@@ -269,9 +332,9 @@ import { startLoading } from "../../../app/loadingSplice";
 
 
                 <div className="bg-[#FFF] rounded-2xl h-[auto] py-5 shadow-lg">
-                    <select className="m-4 font-semibold text-[#1D293F] text-[20px]">
-                        <option value="SAME_DAY" onClick={(e)=>updateOrderPackage(e.target.value)} selected={defaultPackage ==='SAME DAY'  } >Same Day</option>
-                        <option value="EXPRESS" onClick={(e)=>updateOrderPackage(e.target.value)}  selected={defaultPackage ==='EXPRESS'  } >Express</option>
+                    <select className="m-4 font-semibold text-[#1D293F] text-[20px]" onClick={(e)=>updateOrderPackage(e.target.value)}>
+                        <option value="SAME_DAY"  selected={defaultPackage ==='SAME_DAY'  } >Same Day</option>
+                        <option value="EXPRESS"  selected={defaultPackage ==='EXPRESS'  } >Express</option>
                     </select>
 
 
@@ -475,7 +538,7 @@ import { startLoading } from "../../../app/loadingSplice";
                                 onClick={() => toggleFocus((oldState) => { return { ...oldState, vehicleFocus: !focus.vehicleFocus } })}>
                                 <div>
                                     <img src={vehicle === '' ? vehicleIcon : vehicleIconActive }  alt="..." className=" inline-block w-6 mx-1" />
-                                    <p className="inline-block mx-1 text-[#777F8C]"> {(charge.length < 3 && vehicle.trim() === '')?'Select vehicle category': <p className="text-[black] font-semibold">{format(`${vehicle}`) } <span className="text-[#27ac27] text-[15px]">{` • N${charge}`}</span></p>}  </p>
+                                    <p className="inline-block mx-1 text-[#777F8C]"> {(vehicle.length < 3 && vehicle.trim() === '')?'Select vehicle category': <p className="text-[black] font-semibold">{format(`${vehicle}`) } <span className="text-[#27ac27] text-[15px]">{` • N${charge}`}</span></p>}  </p>
                                 </div>
                                 <img src={dropdownIcon}  alt="..." className="inline-block w-5" />
                             </div>
@@ -486,14 +549,14 @@ import { startLoading } from "../../../app/loadingSplice";
                                                             bg-[#FFFFF]  mx-auto border-[2px] 
                                                                 `}
                                     onClick={() => {
-                                        updateVehicle('BIKE');
-                                        updateCharge('2240');
+                                       bikeSettings.status && updateVehicle('BIKE');
+                                       !bikeSettings.status && showError((oldState)=>{return{...oldState,bikeError:true}})
                                      }}
                                     style={vehicle === 'BIKE' ? vehicleActiveClass : vehicleUnActiveClass}>
 
                                     <div className="inline-block">
                                         <div><p className="inline-block font-semibold text-[#1D293F]">{'Bike'}</p> <img src={vehicleInfo}  alt="..." className="inline-block w-[15px]" /></div>
-                                        <p className="inline-block text-[15px] ">{'Price N2,240'}</p>
+                                        <p className="inline-block text-[15px] ">{`Price N${formater.format(charge)}`}</p>
                                     </div>
                                     <img
                                         src={bikeIcon}
@@ -511,6 +574,8 @@ import { startLoading } from "../../../app/loadingSplice";
                                                         right-[-20px] bottom-9 ">
                                         <p style={{ textOrientation: 'upright' }}>MAX 50KG</p>
                                     </div>}
+                                    {error.bikeError &&  <div className=" absolute right-[-100px] rounded-md px-1 bg-[red] text-white ">{bikeSettings.systemMessage || 'Not available at the moment'}</div>}
+
                                 </div>}
 
                                 {<div className={`  rounded-[20px] my-2 h-[100px] relative
@@ -520,15 +585,15 @@ import { startLoading } from "../../../app/loadingSplice";
                                                             border-[2px] 
                                                                 `}
                                     onClick={() => {
-                                        updateVehicle('VAN')
-                                        updateCharge('4300');
+                                       vanSettings.status && updateVehicle('VAN')
+                                       !vanSettings.status && showError((oldState)=>{return{...oldState,vanError:true}})
+
                                     }}
                                     style={vehicle === 'VAN' ? vehicleActiveClass : vehicleUnActiveClass}>
-
                                     <div className="inline-block">
                                         <div><p className="inline-block font-semibold text-[#1D293F]">{'Van'}</p>
                                             <img src={vehicleInfo}  alt="..." className="inline-block w-[15px]" /></div>
-                                        <p className="inline-block  text-[15px] ">{'Price N4,300'}</p>
+                                        <p className="inline-block  text-[15px] ">{`Price N${formater.format(charge * 1.8)}`}</p>
                                     </div>
                                     <img src={vanIcon}  alt="..." className="w-[60px] inline-block mx-auto mr-2" />
                                     {vehicle === 'VAN' &&
@@ -542,6 +607,7 @@ import { startLoading } from "../../../app/loadingSplice";
                                                 right-[-20px] bottom-9 ">
                                             <p style={{ textOrientation: 'upright' }}>MAX 150KG</p></div>
                                     }
+                                  {error.vanError &&  <div className=" absolute right-[-100px] rounded-md px-1 bg-[red] text-white ">{vanSettings.systemMessage || 'Vehicle no available at the moment'}</div>}
 
                                 </div>}
 
@@ -596,7 +662,7 @@ import { startLoading } from "../../../app/loadingSplice";
 
                     {/* SUBMIT */}
 
-                   { (vehicle === '' && charge === '')? <div className="w-[300px] h-[45px]  rounded-[5px]
+                   { (vehicle === '' )? <div className="w-[300px] h-[45px]  rounded-[5px]
                                             text-center flex 
                                             mx-auto my-8 bg-[#27ac27] text-[white]">
                         <div className=" flex-1 flex  justify-center  ">
