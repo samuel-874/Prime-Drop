@@ -103,6 +103,13 @@ import { NotificationContext } from "../../../../App";
         
         }
 
+        useEffect(() => {
+            window.scroll({
+                top: 0,
+                behavior: "smooth"
+            })
+        },[])
+
 
 
         return (   
