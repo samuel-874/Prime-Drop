@@ -13,7 +13,7 @@ const DashBoardHome = () => {
     const { index, changeIndex } = useContext(IndexContext);
     const [defaultPackage,updateDefaultPackage] = useState("SAME_DAY");
     const rawData = localStorage.getItem('App data')
-    const appSettings = rawData !== "undefined" ? JSON.parse(rawData) : [] ;
+    const appSettings = rawData !== "undefined" && rawData ? JSON.parse(rawData) : [] ;
     const sameDayBikeSettings = appSettings.find((appSet)=>{
       return   appSet.service === "Same Day Bike Delivery"
     }) ;
