@@ -25,7 +25,18 @@ import moment from "moment";
     const {token,fullName} = useContext(UserContext); 
     const { updateAuth } = useContext(Authenticated);
     
-    const [ transaction,updateTransactions ] = useState();
+    const [ transaction,updateTransactions ] = useState({
+        averageDuration:0,
+        cashToReceive:0,
+        charge:0,distance: 0,
+        dropOffLocation: "",
+        dropOffTime:"",id: "",
+        itemQuantity: 0,itemToDeliver:"no item",
+        note:"",orderDate: "",
+        orderStatus,pickOffLocation:"",pickUpTime:"",
+        receiverPhoneNum:"",receiversName:"",requestType,
+        senderPhoneNum:"",sendersName: "",vehicle
+    });
 
     const { REACT_APP_AUTH_BASE_URL } = process.env;
 

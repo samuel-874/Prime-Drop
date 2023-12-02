@@ -41,7 +41,9 @@ import { useNavigate } from "react-router-dom";
                     headers: { Authorization:`Bearer ${token}`, 'Content-Type':'multipart/form-data'}
                }).then((response) => {
                 const array = response.data.data
-                        updateTransactions(array.reverse()) 
+                if(array){
+                   updateTransactions(array.reverse()) 
+                }
                     console.log('transact:', transactions)
                }).catch((error)=>{
                     console.log(error)
@@ -78,7 +80,7 @@ import { useNavigate } from "react-router-dom";
 
      {                       <div className="  h-[auto] pb-20 ">
                         
-                            { transactions !== undefined && transactions.map((transaction,index)=>
+                            { transactions ? "no transactions yet" : transactions.map((transaction,index)=>
                                 <HistoryView index={index} updateShowIndex={updateHelper } showIndex={showIndex} updateLt={changeLt} id={transaction.alphaNumericId} key={transaction.id} location={transaction.dropOffLocation} date={transaction.orderDate} charge={transaction.charge} canceled={transaction.orderStatus === 'CANCELLED'} nav={true} receiversName={transaction.receiversName} sendersName={transaction.sendersName} pickOffLocation={transaction.pickOffLocation} dropOffLocation={transaction.dropOffLocation}    />)}
                             </div>}
 
