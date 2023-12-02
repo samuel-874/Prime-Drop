@@ -39,8 +39,8 @@ import axios from "axios";
         <div className="bg-[#f7f8fa] text-white grid grid-rows-[200px,70px,335px]  z-[9999] top-0 bottom-0 left-0 w-[200px] fixed"> 
         <div className=" bg-[#27ac27] align-center flex flex-row">
              <div className="h-[100%] pt-[50px] ml-[20px] mr-auto">
-                  <div className="w-[50px]  h-[60px] ">
-                      <img className="rounded-[50px] my-auto bg-center bg-cover" src={ image || defaultAvatar} alt="profile"  />
+                  <div className="w-[60px]  h-[60px] max-h-[60px] max-w-[60px] rounded-full ">
+                      <img className="rounded-full my-auto bg-center bg-cover" src={ image || defaultAvatar} alt="profile"  />
                   </div>
                   <div className="w-[180px] flex flex-col justify-center    h-[45px]">
                      <p className="text-[29px] tracking-tighter leading-5 ml-[-4px] font-[600] ">{fullName || "Users Name"}</p>

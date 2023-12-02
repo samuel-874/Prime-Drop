@@ -153,7 +153,7 @@ import { startLoading } from "../../../../app/loadingSplice";
                 </div>
                 <form onSubmit={(e) => handleSubmit(e)} className=" w-[270px]">
                         <div className=" flex w-[100%]">
-                            <img className=" rounded-full my-auto w-[70px] h-[70px] bg-center " src={previewSrc || defaultAvatar}  />
+                            <img className=" rounded-full my-auto w-[70px] h-[70px] max-h-[70px] max-w-[70px] bg-center " src={previewSrc || defaultAvatar}  />
                             <p className=" m-auto text-[#27ac27] font-medium cursor-pointer" onClick={openFIleDialog} >Change profile image</p>
                             <input type="file" ref={FileInputRef} onChange={handleFileChange}  className=" hidden" />
                         </div>
