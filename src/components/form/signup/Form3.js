@@ -32,7 +32,7 @@ import { setError } from "../../../app/ErrorSplice";
     const resendOtp = async ( ) =>{
         if(number){
             try{
-                await  axios.post(`http://localhost:8080/api/v1/spatch/verification/resend_mobile`,{mobile:number})
+                await  axios.post(`${process.env.REACT_APP_BASE_URL}/verification/resend_mobile`,{mobile:number})
                 window.location.assign(`${window.location.href}?status=resent`)
               }catch(error){
                 if(error.response){
@@ -57,7 +57,7 @@ import { setError } from "../../../app/ErrorSplice";
             e.preventDefault();
             if(code.length === 6){
                 dispatch(startLoading())
-                axios.post(`http://localhost:8080/api/v1/spatch/verification/verify_mobile`,{mobile:number,otp:code}).then(
+                axios.post(`${process.env.REACT_APP_BASE_URL}/verification/verify_mobile`,{mobile:number,otp:code}).then(
                     ()=>{
                         localStorage.removeItem('number')
                         window.location.assign('/signup/confirmation/verify_mobile')

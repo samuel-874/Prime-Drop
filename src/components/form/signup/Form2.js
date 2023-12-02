@@ -80,7 +80,7 @@ function FormCompletion() {
                                     dispatch(startLoading())
 
 
-                                    axios.post(`http://localhost:8080/api/v1/spatch/verification/verification_mobile?email=${email}`,data).then((response)=>{
+                                    axios.post(`${process.env.REACT_APP_BASE_URL}/verification/verification_mobile?email=${email}`,data).then((response)=>{
                                         localStorage.setItem('number',data.phoneNo)
                                         window.location.assign('/signup/confirmation/phone')
                                         alert('successful')
