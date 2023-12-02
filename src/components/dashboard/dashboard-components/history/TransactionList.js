@@ -80,8 +80,10 @@ import { useNavigate } from "react-router-dom";
 
      {                       <div className="  h-[auto] pb-20 ">
                         
-                            { transactions ? "no transactions yet" : transactions.map((transaction,index)=>
-                                <HistoryView index={index} updateShowIndex={updateHelper } showIndex={showIndex} updateLt={changeLt} id={transaction.alphaNumericId} key={transaction.id} location={transaction.dropOffLocation} date={transaction.orderDate} charge={transaction.charge} canceled={transaction.orderStatus === 'CANCELLED'} nav={true} receiversName={transaction.receiversName} sendersName={transaction.sendersName} pickOffLocation={transaction.pickOffLocation} dropOffLocation={transaction.dropOffLocation}    />)}
+                            { transactions ?  transactions.map((transaction,index)=>
+                                <HistoryView index={index} updateShowIndex={updateHelper } showIndex={showIndex} updateLt={changeLt} id={transaction.alphaNumericId} key={transaction.id} location={transaction.dropOffLocation} date={transaction.orderDate} charge={transaction.charge} canceled={transaction.orderStatus === 'CANCELLED'} nav={true} receiversName={transaction.receiversName} sendersName={transaction.sendersName} pickOffLocation={transaction.pickOffLocation} dropOffLocation={transaction.dropOffLocation}    />)
+                               : "no transactions yet" 
+                           }
                             </div>}
 
                         </div>
