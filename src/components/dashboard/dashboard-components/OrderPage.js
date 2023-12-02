@@ -103,7 +103,6 @@ import { startLoading } from "../../../app/loadingSplice";
                         mainCost =  routeCost[i].amount;
                     }
                 }
-        console.log(mainCost);
 
 
       if(mainCost != undefined && mainCost > 1){
@@ -664,7 +663,7 @@ import { startLoading } from "../../../app/loadingSplice";
 
                    { (vehicle === '' )? <div className="w-[300px] h-[45px]  rounded-[5px]
                                             text-center flex 
-                                            mx-auto my-8 bg-[#27ac27] text-[white]">
+                                            mx-auto my-8 bg-[#27ac27] cursor-not-allowed text-[white]">
                         <div className=" flex-1 flex  justify-center  ">
                             <p className="my-auto mr-[-20px] font-semibold text-[18px] ">Request a Prime</p>
                         </div>

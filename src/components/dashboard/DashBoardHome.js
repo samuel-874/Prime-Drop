@@ -52,13 +52,14 @@ const DashBoardHome = () => {
               { index === 0 ?  
                 <div className="  h-[500px] relative  mx-auto w-[700px] ">
                     <p className=" m-2 text-left text-[19px] font-[700]">Would you like to request?</p>
-                    { appSettings.length > 0 && 
+                    { appSettings.length > 0 ? 
                     <PackageContext.Provider value={{defaultPackage,updateDefaultPackage}}>
                         <RequestCard width={'270px'} bgc={'#27ac27'} serviceName={sameDayBikeSettings.service} disabled={sameDayBikeSettings.status === false && sameDayVanSettings.status === false} text='Same Day' index={1} />
                         <RequestCard width={'200px'} bgc={'#15B2E1'} serviceName={expressBikeSettings.service} disabled={expressBikeSettings.status === false && expressVanSettings.status === false} text='Express' index={1}  />
                         <RequestCard width={'200px'} bgc={'#02C963'} serviceName={interStateSettings.service} disabled={!interStateSettings.status} text='Interstate' />
                         <RequestCard width={'270px'} bgc={'#FFB947'} serviceName={internationalSettings.service} disabled={!internationalSettings.status} text='International' />
                     </PackageContext.Provider> 
+                    : "fetching app services..."
                   }
                 </div>
 

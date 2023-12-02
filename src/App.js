@@ -47,7 +47,7 @@ import { stopLoading } from './app/loadingSplice';
   useEffect(()=>{
     setTimeout(()=>{
       setNotification((oldState)=>{return{...oldState,show:false}})
-    },4000)
+    },10000)
   },[notification])
 
 
@@ -56,7 +56,7 @@ import { stopLoading } from './app/loadingSplice';
   }
     useEffect(()=>{
       if(loading){
-        setTimeout(stoploader,6000)
+        setTimeout(stoploader,10000)
       }
     },[loading])
 
