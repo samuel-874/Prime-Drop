@@ -1,9 +1,11 @@
 import axios from "axios";
 
+const { REACT_APP_BASE_URL } = process.env;
+
 
 export const sendVerificationMail = (email) => {
     if (email != null) {
-        axios.post(`http://localhost:8080/api/v1/spatch/verification/send?email=${email}`).then(
+        axios.post(`${REACT_APP_BASE_URL}/verification/send?email=${email}`).then(
             (response) => {
                 if (response.status < 400) {
                     console.log(response)
@@ -23,7 +25,6 @@ export const sendVerificationMail = (email) => {
 export const ValidateMail =  () => {
 debugger
   const query = new URLSearchParams(window.location.search);
-  const { REACT_APP_BASE_URL } = process.env;
     if(query === ''){
         window.location.assign(`/404?error=no-auth`)
     }
@@ -99,7 +100,7 @@ debugger
 
 export const completeRegistartion = async( data,email )=>{
 
-         axios.post(`http://localhost:8080/api/v1/spatch/verification/verification_mobile?email=${email}`,data).then((response)=>{
+         axios.post(`${REACT_APP_BASE_URL}/verification/verification_mobile?email=${email}`,data).then((response)=>{
         if(response.status < 400){
                 localStorage.setItem('number',data.phoneNo)
                 window.location.assign('/signup/confirmation/phone')
@@ -120,7 +121,7 @@ export const completeRegistartion = async( data,email )=>{
 
     export const resendMobileOtp  = async (number) => {
       try{
-        await  axios.post(`http://localhost:8080/api/v1/spatch/verification/resend_mobile`)
+        await  axios.post(`${REACT_APP_BASE_URL}/verification/resend_mobile`)
         window.location.assign(`${window.location.href}/status=resent`)
       }catch(error){
         if(error.response.data.message && error.response.status === 403){
@@ -139,7 +140,7 @@ export const completeRegistartion = async( data,email )=>{
 
 
     export const validateMobileNo = (mobile,otp) => {
-        axios.post(`http://localhost:8080/api/v1/spatch/verification/verify_mobile`,{mobile,otp}).then(
+        axios.post(`${REACT_APP_BASE_URL}/verification/verify_mobile`,{mobile,otp}).then(
             (response)=>{
                 if(response.status < 400){
                     window.location.assign('/signup/confirmation/verify_mobile')
@@ -155,7 +156,7 @@ export const completeRegistartion = async( data,email )=>{
     export const sendResetPasswordOtp = async ( email ) => {
       let response;
       try{
-        response = await axios.post(`http://localhost:8080/api/v1/spatch/user/reset_password/send?email=${email}`)
+        response = await axios.post(`${REACT_APP_BASE_URL}/user/reset_password/send?email=${email}`)
         window.location.assign(`/password-reset/confirmation?user=${email}`)
       }catch(error){
           alert(error)
@@ -165,7 +166,7 @@ export const completeRegistartion = async( data,email )=>{
     export const validateResetPasswordOtp = async ( email, otp ) =>{
       let response;
       try{
-        response = await axios.post(`http://localhost:8080/api/v1/spatch/user/reset_password/verify?email=${email}&otp=${otp}`)
+        response = await axios.post(`${REACT_APP_BASE_URL}/user/reset_password/verify?email=${email}&otp=${otp}`)
         window.location.assign(`/password-reset/completion?user=${email}`)
       }catch(error){
           alert(error.response.data.message)
@@ -175,7 +176,7 @@ export const completeRegistartion = async( data,email )=>{
     export const resetPassword = async (data) => {
       let response;
       try{
-        response = await axios.post(`http://localhost:8080/api/v1/spatch/user/reset_password`,data)
+        response = await axios.post(`${REACT_APP_BASE_URL}/user/reset_password`,data)
         window.location.assign(`/signup/confirmation/welcome_back`)
       }catch(error){
         alert(error.response.data.message)
