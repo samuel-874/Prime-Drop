@@ -35,11 +35,11 @@ import { useState } from "react";
                 <div className="my-[16px]">
                     <h1 className="text-[24px] text-start font-bold w-[240px]  m-[0]">Glad you made it here.</h1>
                     <h3 className={`font-[400]  text-[16px] text-[${lineColor}] leading-5 w-[240px]  `} >Need to deliver your merchandise?
-                    Let Spatch take care of that.</h3>
+                    Let Prime Drop take care of that.</h3>
                 </div>
 
-                    <Link to="/signup" className="font-[500] bg-[#27ac27] h-[54px]  text-white w-[240px] rounded-[10px]  my-[20px] flex flex-col justify-center"><p className="text-center">Register with Spatch</p></Link>
-                    <Link to="/signin" className="font-[500] bg-[#FFFF] h-[54px] text-[#777F8C] w-[240px] rounded-[10px]  my-[20px] flex flex-col justify-center"><p className="text-center">Sign in to Spatch</p></Link>
+                    <Link to="/signup" className="font-[500] bg-[#27ac27] h-[54px]  text-white w-[240px] rounded-[10px]  my-[20px] flex flex-col justify-center"><p className="text-center">Register with PrimeDrop</p></Link>
+                    <Link to="/signin" className="font-[500] bg-[#FFFF] h-[54px] text-[#777F8C] w-[240px] rounded-[10px]  my-[20px] flex flex-col justify-center"><p className="text-center">Sign in to PrimeDrop</p></Link>
 
             </div>
 
